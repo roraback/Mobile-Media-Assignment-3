@@ -62,8 +62,8 @@
     review4.score = 4;
     review4.numberOfHelpfulReviews = 14;
     review4.numberOfUnhelpfulReviews = 5;
-    
-
+ 
+    restaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3,review4, nil];
     
     
     
