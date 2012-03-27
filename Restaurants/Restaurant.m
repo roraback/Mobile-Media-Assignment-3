@@ -11,6 +11,16 @@
 @synthesize address, name, cuisineType, yearOpened, reviews;
 
 
+-(id)init
+{
+    if (self = [super init])
+    {
+        self.reviews = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+
 -(int)age
 {
     return 2012 - yearOpened;

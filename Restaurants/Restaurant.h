@@ -20,10 +20,11 @@
 @property(readwrite, strong) NSString* cuisineType;
 @property(readwrite) int yearOpened;
 
-@property(readwrite, strong) NSMutableArray* reviews;
+@property(nonatomic, retain) NSMutableArray* reviews;
 
 
 -(int)age;
 -(Review*)mostHelpfulReview;
+-(id)init;
 
 @end

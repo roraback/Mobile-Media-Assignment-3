@@ -72,10 +72,12 @@
     review5.numberOfUnhelpfulReviews = 2;
     
 
-    restaurant.reviews = [[NSMutableArray alloc] initWithObjects:review1, review2, review3,review4, nil];
-    
+//    restaurant.reviews = [[NSMutableArray alloc] initWithObjects:review1, review2, review3,review4, nil];
+    [restaurant.reviews addObject:review1];
+    [restaurant.reviews addObject:review2];
+    [restaurant.reviews addObject:review3];
+    [restaurant.reviews addObject:review4];    
     [restaurant.reviews addObject:review5];
-    
     
     Review* helpfulReview = [[Review alloc] init];
     helpfulReview = [restaurant mostHelpfulReview];
