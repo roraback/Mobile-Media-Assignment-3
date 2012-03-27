@@ -154,9 +154,10 @@
                         <outlet property="addressLabel" destination="27" id="p4K-yi-X5k"/>
                         <outlet property="ageLabel" destination="tVm-OC-esT" id="At5-Wf-HEU"/>
                         <outlet property="cuisineLabel" destination="PbC-R4-mhe" id="z7Z-7w-5Ot"/>
-                        <outlet property="helpfulReviewLabel" destination="XbE-dt-chC" id="nuk-E2-dgh"/>
+                        <outlet property="helpfulReviewLabel" destination="XbE-dt-chC" id="Npi-oZ-uiO"/>
                         <outlet property="helpfulReviewPercentageLabel" destination="VI3-18-5XF" id="tC8-cn-iml"/>
                         <outlet property="navigationHeader" destination="26" id="Uoz-i7-5tg"/>
+                        <outlet property="reviewer" destination="XbE-dt-chC" id="Ebh-ZE-gO7"/>
                         <outlet property="star1" destination="PtP-kR-7aI" id="CBQ-VN-icI"/>
                         <outlet property="star2" destination="bgT-OC-9Mk" id="kza-2V-Pzb"/>
                         <outlet property="star3" destination="6Uz-sr-cVT" id="JZZ-nQ-G4c"/>
@@ -182,8 +183,7 @@
                 <relationship kind="outlet" name="helpfulReviewLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="helpfulReviewPercentageLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="navigationHeader" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="reviewerLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reviewer" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="star1" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="star2" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="star3" candidateClass="UIImageView"/>

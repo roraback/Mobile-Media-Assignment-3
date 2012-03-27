@@ -13,6 +13,7 @@
 @synthesize ageLabel;
 @synthesize helpfulReviewPercentageLabel;
 @synthesize helpfulReviewLabel;
+@synthesize reviewer;
 @synthesize star1;
 @synthesize star2;
 @synthesize star3;
@@ -62,16 +63,29 @@
     review4.score = 4;
     review4.numberOfHelpfulReviews = 14;
     review4.numberOfUnhelpfulReviews = 5;
- 
-    restaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3,review4, nil];
+
+    Review* review5 = [[Review alloc] init];
+    review5.text = @"This is a review that I added. I think this restaurant is super cool!";
+    review5.reviewer = @"Kennz";
+    review5.score = 4;
+    review5.numberOfHelpfulReviews =30;
+    review5.numberOfUnhelpfulReviews = 2;
+    
+
+    restaurant.reviews = [[NSMutableArray alloc] initWithObjects:review1, review2, review3,review4, nil];
+    
+    [restaurant.reviews addObject:review5];
     
     
+    Review* helpfulReview = [[Review alloc] init];
+    helpfulReview = [restaurant mostHelpfulReview];
     
     addressLabel.text = [restaurant address];
     navigationHeader.title = [restaurant name];
     cuisineLabel.text = [restaurant cuisineType];
     ageLabel.text = [NSString stringWithFormat:@"Est. %i (%i years ago)", restaurant.yearOpened, [restaurant age]];
-    helpfulReviewLabel.text = [review1 text];
+    helpfulReviewLabel.text = [[[helpfulReview text] stringByAppendingString:@"  –"] stringByAppendingString:[helpfulReview reviewer]];
+    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"Most helpful review – %d of %d people found this review helpful", [helpfulReview numberOfHelpfulReviews], [helpfulReview numberOfUnhelpfulReviews]+[helpfulReview numberOfHelpfulReviews]];
 }
 
 

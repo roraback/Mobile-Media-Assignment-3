@@ -4,6 +4,7 @@
 //
 
 #import "Restaurant.h"
+#import "Review.h"
 
 
 @implementation Restaurant
@@ -13,6 +14,31 @@
 -(int)age
 {
     return 2012 - yearOpened;
+}
+
+-(Review*)mostHelpfulReview
+{
+    int mostHelpfulRating = 0;
+    Review* HelpfulReview = [[Review alloc] init];
+    for (Review* review in reviews) {
+        if (review.numberOfHelpfulReviews > 5) {
+            float helpfulRating = review.numberOfHelpfulReviews * 100 / (float)(review.numberOfHelpfulReviews + review.numberOfUnhelpfulReviews);
+            if (helpfulRating > mostHelpfulRating) {
+                mostHelpfulRating = helpfulRating;
+                HelpfulReview = review;
+            }
+        }
+        
+    }
+    switch (mostHelpfulRating) {
+        case 0:
+            return nil;
+            break;
+            
+        default:
+            return HelpfulReview;
+            break;
+    }
 }
 
 @end
