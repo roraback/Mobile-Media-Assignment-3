@@ -9,6 +9,22 @@
 @implementation MasterViewController
 
 
+
+-(int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString* cellIdentifier = @"RestaurantCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell.textLabel.text = @"Pio Pio";
+    cell.detailTextLabel.text = @"Peruvian";
+    return cell;
+}
+
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];

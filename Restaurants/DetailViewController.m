@@ -81,13 +81,35 @@
     
     Review* helpfulReview = [[Review alloc] init];
     helpfulReview = [restaurant mostHelpfulReview];
-    
+    int numStars = (int)(restaurant.averageCustomerReview + 0.5);
     addressLabel.text = [restaurant address];
     navigationHeader.title = [restaurant name];
     cuisineLabel.text = [restaurant cuisineType];
     ageLabel.text = [NSString stringWithFormat:@"Est. %i (%i years ago)", restaurant.yearOpened, [restaurant age]];
-    helpfulReviewLabel.text = [[[helpfulReview text] stringByAppendingString:@"  –"] stringByAppendingString:[helpfulReview reviewer]];
-    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"Most helpful review – %d of %d people found this review helpful", [helpfulReview numberOfHelpfulReviews], [helpfulReview numberOfUnhelpfulReviews]+[helpfulReview numberOfHelpfulReviews]];
+    if (helpfulReview != NULL) {
+        helpfulReviewLabel.text = [[[helpfulReview text] stringByAppendingString:@"  –"] stringByAppendingString:[helpfulReview reviewer]];
+        helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"Most helpful review – %d of %d people found this review helpful", [helpfulReview numberOfHelpfulReviews], [helpfulReview numberOfUnhelpfulReviews]+[helpfulReview numberOfHelpfulReviews]];
+    } else {
+        helpfulReviewLabel.text = @"Not enough helpful reviews, yet!";
+        helpfulReviewPercentageLabel.text = @"";
+    }
+    
+    switch (numStars) {
+        case 5:
+            star5.image = [UIImage imageNamed:@"Star_ON.png"];
+        case 4:
+            star4.image = [UIImage imageNamed:@"Star_ON.png"];
+        case 3:
+            star3.image = [UIImage imageNamed:@"Star_ON.png"];
+        case 2:
+            star2.image = [UIImage imageNamed:@"Star_ON.png"];
+        case 1:
+            star1.image = [UIImage imageNamed:@"Star_ON.png"];
+            break;
+        default:
+            break;
+    }
+    
 }
 
 

@@ -24,6 +24,7 @@
 
 
 -(int)age;
+-(float) averageCustomerReview;
 -(Review*)mostHelpfulReview;
 -(id)init;
 

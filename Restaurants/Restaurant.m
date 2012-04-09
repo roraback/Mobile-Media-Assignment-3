@@ -26,6 +26,17 @@
     return 2012 - yearOpened;
 }
 
+-(float)averageCustomerReview
+{
+    float totalStars=0;
+    float counter = 0;
+    for (Review* review in reviews){
+        totalStars += review.score;
+        counter ++;
+    }
+    return totalStars/counter;
+}
+
 -(Review*)mostHelpfulReview
 {
     int mostHelpfulRating = 0;
