@@ -55,7 +55,6 @@
         case 0:
             return nil;
             break;
-            
         default:
             return HelpfulReview;
             break;

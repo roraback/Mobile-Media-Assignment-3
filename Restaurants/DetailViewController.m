@@ -19,6 +19,7 @@
 @synthesize star3;
 @synthesize star4;
 @synthesize star5;
+@synthesize restaurant;
 
 
 @synthesize textOfReview;
@@ -29,7 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    restaurant = [[Restaurant alloc] init];
     
     
     Review* helpfulReview = [[Review alloc] init];

@@ -8,21 +8,7 @@
 
 @implementation MasterViewController
 
-
-
--(int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 1;
-}
-
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString* cellIdentifier = @"RestaurantCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell.textLabel.text = @"Pio Pio";
-    cell.detailTextLabel.text = @"Peruvian";
-    return cell;
-}
+@synthesize restaurants;
 
 
 - (void)awakeFromNib
@@ -35,6 +21,7 @@
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
+
 
 #pragma mark - View lifecycle
 
@@ -93,8 +80,35 @@
     [piopio.reviews addObject:review4];    
     [piopio.reviews addObject:review5];
 
+    self.restaurants = [[NSMutableArray alloc] initWithObjects:piopio, nil];
     
 }
+
+-(int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSLog(@"%i", restaurants.count);
+    return restaurants.count;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString* cellIdentifier = @"RestaurantCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    Restaurant* currentRestaurant = [restaurants objectAtIndex:indexPath.row];
+    cell.textLabel.text = currentRestaurant.name;
+    cell.detailTextLabel.text = currentRestaurant.cuisineType;
+    return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    DetailViewController* detailVC = (DetailViewController*)[segue destinationViewController];
+    UITableView* table = [self tableView];
+    NSIndexPath* indexPath = [table indexPathForSelectedRow];
+    Restaurant* currentRestaurant = [restaurants objectAtIndex:indexPath.row];
+    detailVC.restaurant = currentRestaurant;
+}
+
 
 - (void)viewDidUnload
 {
