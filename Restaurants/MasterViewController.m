@@ -80,7 +80,16 @@
     [piopio.reviews addObject:review4];    
     [piopio.reviews addObject:review5];
 
-    self.restaurants = [[NSMutableArray alloc] initWithObjects:piopio, nil];
+    Restaurant* nahm= [[Restaurant alloc] init];
+    
+    nahm.name = @"Nahm Thai Kitchen";
+    nahm.address = @"194 5th Avenue, Park Slope";
+    nahm.cuisineType = @"Thai";
+    nahm.yearOpened = 1995;
+
+    
+    
+    self.restaurants = [[NSMutableArray alloc] initWithObjects:piopio, nahm, nil];
     
 }
 
