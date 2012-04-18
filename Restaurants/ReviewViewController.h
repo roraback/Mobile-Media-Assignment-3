@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Restaurant.h"
 
 @interface ReviewViewController : UITableViewController
+{
+    Restaurant* restaurant;
+}
+@property (nonatomic, retain) NSObject *restaurant;
 
 @end

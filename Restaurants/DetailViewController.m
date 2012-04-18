@@ -5,6 +5,7 @@
 //
 
 #import "DetailViewController.h"
+#import "ReviewViewController.h"
 
 @implementation DetailViewController
 @synthesize addressLabel;
@@ -63,6 +64,12 @@
             break;
     }
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ReviewViewController* reviewVC = (ReviewViewController*)[segue destinationViewController];
+    reviewVC.restaurant = restaurant;
 }
 
 
