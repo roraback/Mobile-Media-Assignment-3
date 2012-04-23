@@ -22,6 +22,8 @@
 		0EE5A6ED14BEB491006BB5E1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5A6EC14BEB491006BB5E1 /* DetailViewController.m */; };
 		3D27F38C153CF34F0071687F /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D27F38B153CF34F0071687F /* ReviewViewController.m */; };
 		3D42E0651504A9890047F263 /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D42E0641504A9890047F263 /* Review.m */; };
+		3D8753881545E53A0088BCAA /* heart-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D8753861545E53A0088BCAA /* heart-selected.png */; };
+		3D8753891545E53A0088BCAA /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D8753871545E53A0088BCAA /* heart.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		3D27F38B153CF34F0071687F /* ReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewViewController.m; sourceTree = "<group>"; };
 		3D42E0631504A9890047F263 /* Review.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Review.h; sourceTree = "<group>"; };
 		3D42E0641504A9890047F263 /* Review.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Review.m; sourceTree = "<group>"; };
+		3D8753861545E53A0088BCAA /* heart-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-selected.png"; sourceTree = "<group>"; };
+		3D8753871545E53A0088BCAA /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				0EE5A6DB14BEB490006BB5E1 /* Restaurants-Info.plist */,
+				3D8753861545E53A0088BCAA /* heart-selected.png */,
 				0EE5A6DC14BEB490006BB5E1 /* InfoPlist.strings */,
+				3D8753871545E53A0088BCAA /* heart.png */,
 				0EE5A6DF14BEB490006BB5E1 /* main.m */,
 				0EE5A6E114BEB490006BB5E1 /* Restaurants-Prefix.pch */,
 			);
@@ -191,6 +197,8 @@
 				0EE5A6E714BEB491006BB5E1 /* MainStoryboard.storyboard in Resources */,
 				0E6F215614F9FE0F004F682D /* Star_OFF.png in Resources */,
 				0E6F215714F9FE0F004F682D /* Star_ON.png in Resources */,
+				3D8753881545E53A0088BCAA /* heart-selected.png in Resources */,
+				3D8753891545E53A0088BCAA /* heart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

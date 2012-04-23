@@ -8,6 +8,7 @@
 #import "ReviewViewController.h"
 
 @implementation DetailViewController
+@synthesize favoriteButton;
 @synthesize addressLabel;
 @synthesize navigationHeader;
 @synthesize cuisineLabel;
@@ -31,7 +32,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    if (restaurant.isFavorite) 
+    {
+        favoriteButton.image = [UIImage imageNamed:@"heart-selected.png"];
+    } else
+    {
+        favoriteButton.image = [UIImage imageNamed:@"heart.png"];
+    }
+
     
     Review* helpfulReview = [[Review alloc] init];
     helpfulReview = [restaurant mostHelpfulReview];
@@ -87,6 +95,7 @@
     [self setStar3:nil];
     [self setStar4:nil];
     [self setStar5:nil];
+    [self setFavoriteButton:nil];
     [super viewDidUnload];
 }
 
@@ -117,4 +126,15 @@
 }
 
 
+- (IBAction)markAsFavorite:(id)sender
+{
+    restaurant.isFavorite = !restaurant.isFavorite;
+    if (restaurant.isFavorite) 
+    {
+        favoriteButton.image = [UIImage imageNamed:@"heart-selected.png"];
+    } else
+    {
+        favoriteButton.image = [UIImage imageNamed:@"heart.png"];
+    }
+}
 @end

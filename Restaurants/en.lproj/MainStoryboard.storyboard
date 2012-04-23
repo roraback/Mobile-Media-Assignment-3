@@ -168,11 +168,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Restaurant Name" id="26"/>
+                    <navigationItem key="navigationItem" title="Restaurant Name" id="26">
+                        <barButtonItem key="rightBarButtonItem" image="heart.png" id="Ka7-Fq-FSn">
+                            <connections>
+                                <action selector="markAsFavorite:" destination="21" id="wOt-6L-ri3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="27" id="p4K-yi-X5k"/>
                         <outlet property="ageLabel" destination="tVm-OC-esT" id="At5-Wf-HEU"/>
                         <outlet property="cuisineLabel" destination="PbC-R4-mhe" id="z7Z-7w-5Ot"/>
+                        <outlet property="favoriteButton" destination="Ka7-Fq-FSn" id="5C7-YW-Pu2"/>
                         <outlet property="helpfulReviewLabel" destination="XbE-dt-chC" id="Npi-oZ-uiO"/>
                         <outlet property="helpfulReviewPercentageLabel" destination="VI3-18-5XF" id="tC8-cn-iml"/>
                         <outlet property="navigationHeader" destination="26" id="Uoz-i7-5tg"/>
@@ -236,6 +243,7 @@
     </scenes>
     <resources>
         <image name="Star_OFF.png" width="37" height="37"/>
+        <image name="heart.png" width="24" height="21"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
