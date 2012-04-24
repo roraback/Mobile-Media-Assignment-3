@@ -229,6 +229,32 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="MostHelpfulCell" id="igD-WA-Lc2">
+                                <rect key="frame" x="0.0" y="82" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="&quot;One of the finest establishments I've ever had the pleasure to visit. The aji sauce is unreal!&quot; — Tim Riggins" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="hiP-RR-GjO">
+                                            <rect key="frame" x="20" y="0.0" width="280" height="47"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Most helpful review  —  14 of 15 found this helpful" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" id="0S2-16-ax7">
+                                            <rect key="frame" x="20" y="35" width="280" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.91845494999999999" green="0.010285829" blue="0.11711422" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="UXz-6M-Yj7" id="5wH-CN-jgv"/>
@@ -245,6 +271,34 @@
         <image name="Star_OFF.png" width="37" height="37"/>
         <image name="heart.png" width="24" height="21"/>
     </resources>
+    <classes>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="markAsFavorite:"/>
+                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cuisineLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="favoriteButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="helpfulReviewLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="helpfulReviewPercentageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navigationHeader" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="reviewer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="star1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="star2" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="star3" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="star4" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="star5" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="textOfReview" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+        </class>
+        <class className="ReviewViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReviewViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
